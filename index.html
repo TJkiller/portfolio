@@ -52,7 +52,7 @@
             border: 2px solid var(--primary);
             border-radius: 50%;
             position: fixed;
-            pointer-events: none;
+            pointer-events: none !important; /* makes sure it never blocks clicks */
             z-index: 9999;
             transition: all 0.1s ease;
             transform: translate(-50%, -50%);
@@ -64,12 +64,13 @@
             border: 1px solid var(--primary);
             border-radius: 50%;
             position: fixed;
-            pointer-events: none;
+            pointer-events: none !important; /* same here */
             z-index: 9998;
             transition: all 0.3s ease;
             transform: translate(-50%, -50%);
             opacity: 0.5;
         }
+
 
         .scroll-to-top {
             position: fixed;
@@ -840,18 +841,20 @@
                 <div class="about-text">
                     <h3>Passionate Developer Building Digital Solutions</h3>
                     <p>
-                        I'm a dedicated software engineer with a passion for creating innovative digital experiences. 
-                        With expertise spanning full-stack development, I transform complex problems into elegant, 
-                        user-friendly solutions.
+                        Hi! I am a passionate full-stack developer with a love for creating
+                        innovative solutions. With expertise in modern web technologies, I
+                        enjoy building applications that solve real-world problems and
+                        provide exceptional user experiences.
                     </p>
                     <p>
-                        My journey in tech is driven by curiosity and a commitment to continuous learning. 
-                        I thrive on challenges that push the boundaries of what's possible with code, 
-                        and I'm always exploring cutting-edge technologies to stay ahead of the curve.
+                        When I am not coding, you can find me exploring new technologies,
+                        contributing to open-source projects or sharing knowledge with
+                        the developer community. I believe in continuous learning and
+                        staying up to date with the latest industry trends.
                     </p>
                     <p>
-                        When I'm not coding, you'll find me contributing to open source projects, 
-                        or experimenting with the latest frameworks and tools.
+                        I am always excited to take on new challenges and collaborate with
+                        others to bring creative ideas to life.
                     </p>
                     <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Request CV</a>
                 </div>
@@ -881,9 +884,6 @@
                     <div class="project-links">
                         <a href="https://github.com/TJkiller/AgriCultureWebapplication.git" class="project-link" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i> Code
-                        </a>
-                        <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> Demo
                         </a>
                     </div>
                 </div>
@@ -957,6 +957,8 @@
                         <span class="skill-item">PHP</span>
                         <span class="skill-item">Python</span>
                         <span class="skill-item">Laravel</span>
+                        <span class="skill-item">MangoDB</span>
+                        <span class="skill-item">Dbeaver</span>
                         <span class="skill-item">MySQL</span>
                         <span class="skill-item">PostgreSQL</span>
                     </div>
@@ -970,6 +972,7 @@
                         <span class="skill-item">GitHub Actions</span>
                         <span class="skill-item">Linux</span>
                         <span class="skill-item">Bash</span>
+                        <span class="skill-item">Azure</span>
                     </div>
                 </div>
 
