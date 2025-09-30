@@ -52,7 +52,7 @@
             border: 2px solid var(--primary);
             border-radius: 50%;
             position: fixed;
-            pointer-events: none;
+            pointer-events: none !important; /* makes sure it never blocks clicks */
             z-index: 9999;
             transition: all 0.1s ease;
             transform: translate(-50%, -50%);
@@ -64,12 +64,13 @@
             border: 1px solid var(--primary);
             border-radius: 50%;
             position: fixed;
-            pointer-events: none;
+            pointer-events: none !important; /* same here */
             z-index: 9998;
             transition: all 0.3s ease;
             transform: translate(-50%, -50%);
             opacity: 0.5;
         }
+
 
         .scroll-to-top {
             position: fixed;
