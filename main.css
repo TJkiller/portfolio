@@ -645,9 +645,76 @@ input, textarea { font: inherit; }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-16);
+  grid-template-columns: 260px 1fr 1fr;
+  gap: var(--space-12);
   align-items: start;
+}
+
+/* --- Profile photo --- */
+.about-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo__frame {
+  position: relative;
+  width: 240px;
+  height: 280px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid var(--accent-dim);
+  box-shadow: var(--shadow-md), var(--shadow-accent);
+  background: var(--bg-elevated);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.about-photo__frame:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg), var(--shadow-accent);
+}
+
+/* The actual photo */
+.about-photo__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* Fallback placeholder — shown when image is missing */
+.about-photo__placeholder {
+  position: absolute;
+  inset: 0;
+  display: none; /* hidden by default; shown via JS onerror */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  font-family: var(--ff-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.06em;
+  border: 2px dashed var(--border-hover);
+  border-radius: var(--radius-lg);
+}
+
+.about-photo__placeholder i {
+  font-size: 3rem;
+  color: var(--accent);
+  opacity: 0.4;
+}
+
+/* When image fails to load, show the placeholder */
+.about-photo__frame--placeholder .about-photo__img {
+  display: none;
+}
+
+.about-photo__frame--placeholder .about-photo__placeholder {
+  display: flex;
 }
 
 .about-text p {
@@ -1203,7 +1270,21 @@ textarea { resize: vertical; min-height: 120px; }
   .hero-code-block { order: -1; }
   .code-window { max-width: 380px; margin: 0 auto; }
 
-  .about-grid { grid-template-columns: 1fr; gap: var(--space-10); }
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+  }
+
+  /* Photo spans both columns on tablet, centered */
+  .about-photo {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+
+  .about-photo__frame {
+    width: 180px;
+    height: 210px;
+  }
 
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
 
@@ -1261,7 +1342,20 @@ textarea { resize: vertical; min-height: 120px; }
 
   .activity-cards { grid-template-columns: 1fr; }
 
+  /* Photo full width on mobile */
+  .about-photo {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .about-photo__frame {
+    width: 200px;
+    height: 230px;
+  }
+
   .projects-grid { grid-template-columns: 1fr; }
+
+  .about-grid { grid-template-columns: 1fr; gap: var(--space-8); }
 
   .skills-grid { grid-template-columns: 1fr; }
 
